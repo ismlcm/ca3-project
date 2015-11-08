@@ -1,0 +1,28 @@
+<div class="page-header">
+    <h1>Documentation</h1>
+    <p>{{msg}}</p>
+</div>
+
+
+<p><strong>Gruppe:</strong> Mazlum (A), Ismail (B), og Alexander (A) </p>
+
+<p>Github link: <a href="https://github.com/ismlcm/ca3Project" target="_blank">https://github.com/ismlcm/ca3Project </a></p>
+
+<p>Openshift: <a href="ca3-alexandernielsen.rhcloud.com" target="_blank">https://ca3-alexandernielsen.rhcloud.com</a></p>
+
+<br/><br/>
+
+<h4>Test Strategy:</h4>
+<p>Vores strategi med testene har været at komme rundt om CRUD (Minus update, da det ikke har været aktuelt for dette projekt).  Vi har i backend brugt jUnit til at teste vores facader. Her har vi fokuseret på at man skal kunne oprette en ny bruger, man skal kunne finde brugeren ud igen, og til sidst at det var muligt at slette brugeren fra databasen.  Da vi endte under tidspres har vores hovedfokus været at nå så langt muligt med testene således at der blev testet i forhold til end-to-end testing. Derfor har vi ikke nået at teste alle outcomes af koden, men til gengæld ved vi med sikkerhed at eksempelvis User virker fra start til slut. For at skabe mere tid til os selv har vi lavet meget blackbox testing løbende og derved tjekket at alt virkede. Vi har derfor prøvet at lave vores CRUD testing ”Happy-path”. 
+    Desværre da vi har været under tidspres har vi ikke fået lavet så meget exception-handling hvilket også er grunden til vi ikke har testet hvis man støder ind i indtastningsfejler.</p>
+
+<br/>
+
+<h4>Who did what:</h4>
+<p>Vi har fra start af været gode til at dele opgaverne ud og ligge en plan. Vi har uddelt opgaverne løbende, så alle har været omkring både front-end og back-end. Men samtidig har vi til tider, eksempelvis omkring opgaven med currency valgt at sidde sammen da vi mente at netop denne opgave ville være en potentiel problemskaber. Ved at dele det op har vi alle kodet og kommet rundt om det hele, og ved at sidde sammen har vi fået nogle gode debatter om løsningsforslag til de situationer hvor vi er stødt ind i problemer. Vi mener derfor selv at vi alle fortjener fuld point. Vi har haft mange problemer med github pga. database/persistence unit, hvilket har resulteret i at vi måtte skubbe git lidt til siden frem for at nå at kode det vi har skullet nå. Vi har desuden været rigtig gode til at supplere hinanden når vi har siddet sammen, og det kunne specielt mærkes omkring openshift og currency hvor vi har fundet løsninger sammen, og derved sparet meget tid. </p>
+
+<br/>
+
+<h4>How to test the system:</h4>
+<p>Vores hjemmeside kan enten testes ved at logge ind og blackbox teste de forskellige funktionaliteter. Her kan man benytte sig af Admin (Username: ”admin” & password: ”admin”) og til user kan der oprettes en ny ved brug af menuen på hjemmesiden. 
+    Ellers kan man igennem github: <a href="https://github.com/ismlcm/ca3Project" target="_blank">https://github.com/ismlcm/ca3Project</a> Her kan projektet downloades, og efterfølgende kan man køre vores backend test som alle ligger i Test Packages  Test. Før disse virker skal der rettes i PersistenceUnit filen så den peger på den ”nye” database som der skal også skal oprettes.  Derudover skal testene blot køre. Det skal siges at vi til tider har oplevet problemer med serveren som ligger i den test klasse som hørte til projektet. </p>

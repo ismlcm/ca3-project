@@ -1,0 +1,82 @@
+<div ng-show="ifUser">
+
+<div class="page-header">
+    <h1>Exhange Rate Info</h1>
+    <p>{{msg}}</p>
+</div>
+
+    <div ng-init="getCurrency()">
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control input-lg" id="curfilter" name="curfilter" ng-model="curfilter" placeholder="Search for currency.." style="text-align: center;">
+                    <span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+                </div> 
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th><a href="" ng-click="predicate = 'code';
+                                        reverse = !reverse" style="text-decoration: none;"><h4 class="text-success">Code</h4></a></th>
+                            <th><a href="" ng-click="predicate = 'descr';
+                                        reverse = !reverse" style="text-decoration: none;"><h4 class="text-success">Desc.</h4></a></th>
+                            <th></th>
+                            <th class="text-right"><a href="" ng-click="predicate = 'amount';
+                                        reverse = !reverse" style="text-decoration: none;"><h4 class="text-success">Amount</h4></a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="d in data| filter: curfilter | orderBy:predicate:reverse">
+                            <td>{{d.code}}</td>
+                            <td>{{d.descr}}</td>
+                            <td class="text-right">100 {{d.code}} = </td>
+                            <td class="text-right">{{d.amount}} DKK</td>
+                        </tr>
+                    </tbody>
+                </table>  
+            </div>
+            <div class="col-md-4">
+                <div class="well">
+
+                    <h3>Calculator</h3>
+
+                    <br/>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>From</label>
+                            <select class="form-control input-sm" ng-model="curFrom">
+                                <option value="100">DKK</option>
+                                <option value="{{d.amount}}" ng-repeat="d in data">
+                                    {{d.code}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label>To</label>
+                            <select class="form-control input-sm" ng-model="curTo">
+                                <option value="100">DKK</option>
+                                <option value="{{d.amount}}" ng-repeat="d in data">
+                                    {{d.code}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <input type="text" class="form-control" placeholder="Amount" ng-model="curAmount">
+
+                    <br/>
+
+                    <button class="btn btn-success btn-block" type="button" ng-click="calCurrency()">Calculate</button>
+
+                    <h3 class="text-right" style="margin-top: 30px;">Result: <span class="text-success"><strong>{{parseCal}}</strong></span></h3>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
